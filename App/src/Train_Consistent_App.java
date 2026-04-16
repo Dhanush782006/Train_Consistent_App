@@ -1,36 +1,41 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
- * UC2: Add Passenger Bogies to Train (ArrayList Operations)
+ * UC3: Track Unique Bogie IDs (Set – HashSet)
  * File Name: Train_Consistent_App.java
- * Author: DHANUSH_REDDY
+ * Author: Dhanush_Reddy
  */
 public class Train_Consistent_App {
 
     public static void main(String[] args) {
-
         System.out.println("=== Train Consist Management App ===");
 
-        List<String> passengerBogies = new ArrayList<>();
 
+        List<String> passengerBogies = new ArrayList<>();
         passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
         passengerBogies.add("First Class");
 
-        System.out.println("Passenger Bogies Added: " + passengerBogies);
-        System.out.println("Current Bogie Count: " + passengerBogies.size());
-
-        System.out.println("\nRemoving AC Chair...");
-        passengerBogies.remove("AC Chair");
+        Set<String> bogieIds = new HashSet<>();
 
 
-        System.out.println("Is 'Sleeper' still in the consist? " + passengerBogies.contains("Sleeper"));
+        System.out.println("\nRegistering Bogie IDs...");
+        bogieIds.add("BG101");
+        bogieIds.add("BG102");
+        bogieIds.add("BG103");
+        bogieIds.add("BG101");
 
-        System.out.println("Final Passenger Consist: " + passengerBogies);
-        System.out.println("Total Bogies: " + passengerBogies.size());
+        System.out.println("Registered Unique Bogie IDs: " + bogieIds);
+        System.out.println("Total Unique IDs tracked: " + bogieIds.size());
+
+
+        if (bogieIds.contains("BG101")) {
+            System.out.println("System Check: Bogie BG101 is successfully registered and unique.");
+        }
 
         System.out.println("------------------------------------");
-        System.out.println("UC2 Operations Completed successfully.");
+        System.out.println("UC3 Uniqueness Constraints applied successfully.");
     }
 }
